@@ -1,0 +1,82 @@
+\chapter{Introducción}
+En \verb|\thesisfaculty{}| se escribe el nombre de la facultad a la que pertenece el
+autor.
+
+Para tesis de grado, en \verb|\thesistype{}| se escribe ``Carrera de'' y la carrera a la
+que pertenece el autor, por ejemplo \verb|\thesistype{Carrera de Computación}|. Para
+tesis de maestría, en \verb|\thesistype{}| se escribe ``Maestría en'' y el nombre de la
+maestría, por ejemplo \verb|\thesistype{Maestría en Ciencias de la Computación}|.
+
+En \verb|\thesistitle{}| se escribe el título de la tesis el cual no debe llevar punto
+final. En \verb|\thesisdegree{}| se escribe el nombre del título a obtener.
+
+En \verb|\thesisauthor{}| se escriben primero los nombres y luego los apellidos del
+autor, sin comas ni punto final. En caso de contar con segundo autor utilizar
+\verb|\thesissecondauthor{}|, y si no, comentar o borrar el macro.
+
+En \verb|\thesisdirector{}{}| y \verb|\thesisseconddirector{}{}| se escriben los nombres
+de los directores seguidos de su ORCID, se cumplen las mismas normas de los autores, no
+se debe agregar el título académico (Ing., Dr., Lic., etc.).
+
+En \verb|\thesisyear{}|, \verb|\thesismonth{}| y \verb|\thesisday{}| se escribe la fecha
+de entrega expresada únicamente con números.
+
+En \verb|\thesisresumen{}| se escribe el resumen en español, y en
+\verb|\thesisabstract{}| se el mismo en inglés. Ambos deben ser un único párrafo con una
+extensión máxima de 250 palabras. En \verb|\resumenkeywords{}| y
+\verb|\abstractkeywords{}| se escriben entre tres y cinco palabras clave, separadas por
+comas, sin punto final y en minúscula.
+
+Se recomienda organizar el contenido en archivos separados dentro de \verb|content/|, y
+mantener una jerarquía máxima de tres niveles: \verb|\chapter{}|, \verb|\section{}| y
+\verb|\subsection{}|.
+
+Los agradecimientos son opcionales, en general para secciones antes del contenido
+principal se recomienda usar el prefijo \verb|0_| para una mejor organización a nivel de
+archivos, por ejemplo \verb|0_1_agradecimientos.tex|. Para el contenido principal se
+recomienda usar el prefijo \verb|1_|, por ejemplo \verb|1_1_introduccion.tex|.
+
+Las referencias bibliográficas se manejan con el archivo \verb|references.bib|. Para
+citar una fuente se usa \verb|\cite{}|, por ejemplo
+\verb|\cite{a, b}| produciría \cite{gao_object_2025, sourav_cnn_2023}.
+
+Los anexos se escriben en el archivo destinado para ello y se crean con el comando
+\verb|\anexo{}|. Cada anexo puede llevar su propio título y etiqueta para citarse dentro
+del documento, por ejemplo Anexo~\ref{anexo:ejemplo1}.
+
+Se recomienda usar \verb|tabularx| para las tablas (ejemplo la
+Tabla~\ref{tab:ejemplo-tabularx}) para ajustar automáticamente el ancho de las columnas
+al ancho total de la página, se puede utilizar L, C o R para definir el alineamiento de
+cada columna.
+
+\begin{table}[H]
+  \centering
+  \caption{Ejemplo de tabla con \texttt{tabularx}.}
+  \label{tab:ejemplo-tabularx}
+  \begin{tabularx}{\textwidth}{LLL}
+    \hline
+    \textbf{Encabezado1} & \textbf{Encabezado2} & \textbf{Encabezado3} \\
+    \hline
+    Valor1               & Valor2               & Valor3               \\
+    Valor4               & Valor5               & Valor6               \\
+    \hline
+  \end{tabularx}
+\end{table}
+
+Para figuras (ejemplo la Figura~\ref{fig:comparacion-desempeno}), utilizar
+\verb|\figurecaption{}{}| para escribir un pie de figura corto seguido de una
+descripción larga, unicamente el corto aparecerá en la tabla de figuras.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.2\textwidth]{example-image-a}
+  \figurecaption{%
+    Comparación de desempeño por época entre un modelo con \texttt{freeze=None} y otro
+    con \texttt{freeze=10}.%
+  }{%
+    La adaptación completa de la red en promedio otorga un mejor desempeño (0.87) a lo
+    largo del entrenamiento, frente a mantener las 10
+    primeras capas fijas (0.83).%
+  }
+  \label{fig:comparacion-desempeno}
+\end{figure}
