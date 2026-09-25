@@ -132,7 +132,7 @@
 \newcommand{\uc@printdirector}[2]{%
   #1\par%
   \ifstrempty{#2}{}{%
-    \vspace*{12pt}%
+    \vspace*{13.6pt}%
     ORCID: \directororcid{#2}\par%
   }%
 }
@@ -237,17 +237,18 @@
 \newcommand{\maketitlepage}{%
     {%
       \centering%
-      \includegraphics[height=92pt]{content/logos/ucuenca.png}\par%
-      \vspace*{-3pt}%
+      \vspace*{-9.8pt}%
+      \includegraphics[height=91.1pt]{content/logos/ucuenca.png}\par%
+      \vspace*{-0.6pt}%
       {\fontsize{18pt}{32.4pt}\selectfont\bfseries Universidad de Cuenca\par}%
-      \vspace*{12pt}%
+      \vspace*{12.5pt}%
       {\fontsize{14pt}{25.2pt}\selectfont Facultad de \@thesisfaculty\par}%
-      \vspace*{9pt}%
+      \vspace*{8.8pt}%
       {\fontsize{14pt}{25.2pt}\selectfont \@thesistype\par}%
-      \vspace*{17pt}%
+      \vspace*{17.5pt}%
       {\fontsize{12pt}{14.4pt}\selectfont\bfseries\@thesistitle\par}%
     }
-    \vspace*{37pt}%
+    \vspace*{36.6pt}%
     \begin{adjustwidth}{285pt}{0pt}%
       \pretolerance=10000%
       \justifying\fontsize{11pt}{13pt}\selectfont%
@@ -263,12 +264,12 @@
       \fi%
       \vspace*{10pt}%
       \uc@printauthors%
-      \vspace*{32pt}%
+      \vspace*{31.6pt}%
       \ifuc@hasseconddirector%
         {\bfseries Directores:}\par%
         \vspace*{9pt}%
         \uc@printdirector{\@thesisdirectorname}{\@thesisdirectororcid}%
-        \vspace*{10pt}%
+        \vspace*{14pt}%
         \uc@printdirector{\@thesisseconddirectorname}{\@thesisseconddirectororcid}%
       \else%
         {\bfseries Director:}\par%
@@ -282,7 +283,7 @@
         \vspace*{10pt}%
         \@thesisyear-\@thesismonth-\@thesisday\par%
       }
-      \vspace*{46pt}%
+      \vspace*{40.9pt}%
     }%
   \newpage%
 }
@@ -308,14 +309,16 @@
   }{\includegraphics[height=18pt]{content/logos/creative-commons.pdf}}
   \hspace*{12pt}%
   \includegraphics[height=25pt]{content/logos/by-nc.pdf}\par%
+  \vspace*{8pt}%
   {%
     \setlength{\parskip}{10pt}%
     \fontsize{9pt}{10pt}\selectfont #1\par%
+    \vspace*{1.8pt}%
     \textbf{#2:} \href{%
       https://dspace.ucuenca.edu.ec/%
     }{\uline{https://dspace.ucuenca.edu.ec/}}\par%
   }%
-  \vspace*{18pt}%
+  \vspace*{25pt}%
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
